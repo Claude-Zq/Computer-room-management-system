@@ -29,8 +29,6 @@
 
 ### 学生类
 
-#### 接口
-
 * 显示学生操作的菜单界面 virtual void operMenu();
 * 申请预约  void applyOrder() ;
 *  查看自身的预约 void showMyOrder();
@@ -41,9 +39,22 @@
 
 ### 老师类
 
-#### 接口
-
 * 显示教师操作的菜单界面 virtual void operMenu();
 * 查看所有的预约 void showAllOrder();
 * 审核预约 void validOrder();
 
+
+
+### 管理员类
+
+* 显示管理员操作的菜单界面 virtual void operMenu();
+
+* 添加账号 void addPerson();
+
+* 查看账号 void showPerson();
+
+* 查看机房信息 void showComputer();
+
+* 清空预约记录 void cleanFile();
+
+  
