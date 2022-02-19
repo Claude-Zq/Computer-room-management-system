@@ -62,3 +62,23 @@
 ## 登录模块
 
 * 全局文件：globalFile
+* 登录函数：void LogIn(std::string fileName, int type);*文件名，用户选择*
+
+
+
+
+
+#### 学生登录的实现
+
+##### student.txt文件
+
+注意：编码方式为UTF-8时，会出现中文乱码，可打开txt文件，点另存为，修改为ANSI
+
+* 第一列 学号
+
+* 第二列 学生姓名
+
+* 第三列 密码
+
+  
+
