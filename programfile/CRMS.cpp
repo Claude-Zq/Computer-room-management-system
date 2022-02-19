@@ -25,7 +25,7 @@ int main() {
 
 		int select;
 		do {
-			std::cout << "输入您的身份: " << std::endl;
+			std::cout << "输入您的选择: " << std::endl;
 			if (std::cin >> select) break; /*输入合法性检查*/
 			std::cout << "输入有误，请重新输入" << std::endl;
 			std::cin.clear();/*清空输入缓冲区*/
@@ -40,6 +40,9 @@ int main() {
 		case 3://管理员
 			break;
 		case 0://退出
+			std::cout << "欢迎下次使用" << std::endl;
+			system("pause");
+			return 0;
 			break;
 		default:
 			std::cout << "无该选项，请重新选择" << std::endl;
