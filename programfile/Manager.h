@@ -1,5 +1,7 @@
 #pragma once
 #include"Identity.h"
+#include<iostream>
+#include<string>
 
 
 class Manager:public Identity {

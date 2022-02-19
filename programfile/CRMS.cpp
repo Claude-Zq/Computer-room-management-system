@@ -11,6 +11,9 @@
 //登录功能
 void LogIn(std::string fileName, int type);
 
+//进入管理员子菜单界面
+void managerMenu(Identity*& manager);
+
 int main() {
 
 	while (true) {
@@ -155,6 +158,7 @@ void LogIn(std::string fileName, int type) {
 				system("cls");
 				//创建管理对象
 				pPerson = new Manager(name, pwd);
+				managerMenu(pPerson);
 				return;
 			}
 		}
@@ -167,5 +171,56 @@ void LogIn(std::string fileName, int type) {
 }
 
 
+//管理员菜单
+void managerMenu(Identity*& manager) {
+	while (true) {
+		//管理员菜单
+		manager->operMenu();
 
+		/*将父类Indentity的指针转换为子类Manager的指针以调用子类的其他接口*/
+		Manager* pMan = (Manager*)manager;
+		
+		int select = 0;/*输入用户的选择*/
+		do {
+			std::cout << "输入您的选择: " << std::endl;
+			if (std::cin >> select) break; /*输入合法性检查*/
+			std::cout << "输入有误，请重新输入" << std::endl;
+			std::cin.clear();/*清空输入缓冲区*/
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		} while (true);
+
+		if (select == 1) {
+			/*添加账号*/
+			std::cout << "添加账号" << std::endl;
+			pMan->addPerson();
+		}
+		else if (select == 2) {
+			/*查看账号*/
+			std::cout << "查看账号" << std::endl;
+			pMan->showPerson();
+		}
+		else if (select == 3) {
+			/*查看机房*/
+			std::cout << "查看机房" << std::endl;
+			pMan->showComputer();
+		}
+		else if (select == 4) {
+			/*清空预约*/
+			std::cout << "清空预约" << std::endl;
+			pMan->cleanFile();
+		}
+		else if (select == 0) {
+			delete manager;
+			std::cout << "注销成功" << std::endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+		else {
+			std::cout << "无该选项，请重新输入" << std::endl;
+		}
+		system("pause");
+		system("cls");
+	}
+}
 
