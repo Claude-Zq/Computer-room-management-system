@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClCompile Include="CRMS.cpp" />
     <ClCompile Include="Stuent.cpp" />
+    <ClCompile Include="Teacher.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Identity.h" />
     <ClInclude Include="Student.h" />
+    <ClInclude Include="Teacher.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

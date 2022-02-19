@@ -9,6 +9,10 @@
 
 
 
+
+
+
+
 ##  身份类
 
 
@@ -33,5 +37,13 @@
 * 取消预约 void cancelOrder();
 * 查看所有预约 void showALLOrder();
 * 取消预约 cancelOrder();
-* 学号
+* 学号 m_id
+
+### 老师类
+
+#### 接口
+
+* 显示教师操作的菜单界面 virtual void operMenu();
+* 查看所有的预约 void showAllOrder();
+* 审核预约 void validOrder();
 
