@@ -8,7 +8,7 @@
 #define STUDENT_FILE "student.txt"
 
 //教师文件
-#define TEACH_FILE "teacher.txt"
+#define TEACHER_FILE "teacher.txt"
 
 //机房信息文件
 #define COMPUTER_FILE "computerRoom.txt"
