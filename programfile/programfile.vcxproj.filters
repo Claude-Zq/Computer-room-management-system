@@ -18,5 +18,16 @@
     <ClCompile Include="CRMS.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Stuent.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Identity.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Student.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

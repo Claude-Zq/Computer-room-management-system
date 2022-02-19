@@ -140,6 +140,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CRMS.cpp" />
+    <ClCompile Include="Stuent.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Identity.h" />
+    <ClInclude Include="Student.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

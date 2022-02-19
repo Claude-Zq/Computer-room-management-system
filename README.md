@@ -25,5 +25,13 @@
 
 ### 学生类
 
+#### 接口
 
+* 显示学生操作的菜单界面 virtual void operMenu();
+* 申请预约  void applyOrder() ;
+*  查看自身的预约 void showMyOrder();
+* 取消预约 void cancelOrder();
+* 查看所有预约 void showALLOrder();
+* 取消预约 cancelOrder();
+* 学号
 
