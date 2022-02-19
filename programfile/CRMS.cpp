@@ -123,7 +123,7 @@ void LogIn(std::string fileName, int type) {
 		std::string fName, fPwd;/*从文件中获取的姓名、密码*/
 		while (ifs >> fId >> fName >> fPwd) {
 			if (id == fId && name == fName && pwd == fPwd) {
-				std::cout << "学生验证登录成功!" << std::endl;
+				std::cout << "学生登录验证成功!" << std::endl;
 				system("pause");
 				system("cls");
 				pPerson = new Student(id, name, pwd);
@@ -137,7 +137,7 @@ void LogIn(std::string fileName, int type) {
 		std::string fName, fPwd;/*从文件中获取的姓名、密码*/
 		while (ifs >> fId >> fName >> fPwd) {
 			if (id == fId && name == fName && pwd == fPwd) {
-				std::cout << "老师验证登录成功!" << std::endl;
+				std::cout << "教师登录验证成功!" << std::endl;
 				system("pause");
 				system("cls");
 				pPerson = new Teacher(id, name, pwd);
@@ -147,6 +147,17 @@ void LogIn(std::string fileName, int type) {
 	}
 	else if (type == 3) {
 		//管理员登录验证
+		std::string fName, fPwd;/*从文件中获取的姓名、密码*/
+		while (ifs >> fName >> fPwd) {
+			if (name == fName && pwd == fPwd) {
+				std::cout << "管理员登录验证成功!" << std::endl;
+				system("pause");
+				system("cls");
+				//创建管理对象
+				pPerson = new Manager(name, pwd);
+				return;
+			}
+		}
 	}
 
 	std::cout << "登录失败" << std::endl;
