@@ -126,13 +126,24 @@ void LogIn(std::string fileName, int type) {
 				std::cout << "学生验证登录成功!" << std::endl;
 				system("pause");
 				system("cls");
-				pPerson = new Teacher(id, name, pwd);
+				pPerson = new Student(id, name, pwd);
 				return;
 			}
 		}
 	}
 	else if (type == 2) {
 		//教师登录验证
+		int fId;/*从文件中获取的id号*/
+		std::string fName, fPwd;/*从文件中获取的姓名、密码*/
+		while (ifs >> fId >> fName >> fPwd) {
+			if (id == fId && name == fName && pwd == fPwd) {
+				std::cout << "老师验证登录成功!" << std::endl;
+				system("pause");
+				system("cls");
+				pPerson = new Teacher(id, name, pwd);
+				return;
+			}
+		}
 	}
 	else if (type == 3) {
 		//管理员登录验证
