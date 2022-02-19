@@ -58,3 +58,7 @@
 * 清空预约记录 void cleanFile();
 
   
+
+## 登录模块
+
+* 全局文件：globalFile
