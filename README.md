@@ -51,6 +51,19 @@
 
 * 添加账号 void addPerson();
 
+  * 去重方方案
+
+  ```c++
+  //存放学生信息
+  std::vector<Student> vStu;
+  //存放老师信息
+  std::vector<Teacher> vTea;
+  //初始化以上容器(在每次Manager的构造、添加完学生信息后调用)
+  void initVector();
+  //检测重复(查看容器中是否有已yid)
+  bool checkRepeat(int id, int type);
+  ```
+
 * 查看账号 void showPerson();
 
 * 查看机房信息 void showComputer();

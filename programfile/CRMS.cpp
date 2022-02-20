@@ -191,22 +191,22 @@ void managerMenu(Identity*& manager) {
 
 		if (select == 1) {
 			/*添加账号*/
-			std::cout << "添加账号" << std::endl;
+			std::cout << "[添加账号]" << std::endl;
 			pMan->addPerson();
 		}
 		else if (select == 2) {
 			/*查看账号*/
-			std::cout << "查看账号" << std::endl;
+			std::cout << "[查看账号]" << std::endl;
 			pMan->showPerson();
 		}
 		else if (select == 3) {
 			/*查看机房*/
-			std::cout << "查看机房" << std::endl;
+			std::cout << "[查看机房]" << std::endl;
 			pMan->showComputer();
 		}
 		else if (select == 4) {
 			/*清空预约*/
-			std::cout << "清空预约" << std::endl;
+			std::cout << "[清空预约]" << std::endl;
 			pMan->cleanFile();
 		}
 		else if (select == 0) {
@@ -218,9 +218,10 @@ void managerMenu(Identity*& manager) {
 		}
 		else {
 			std::cout << "无该选项，请重新输入" << std::endl;
+			system("pause");
+			system("cls");
 		}
-		system("pause");
-		system("cls");
+		
 	}
 }
 
