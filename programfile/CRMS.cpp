@@ -20,6 +20,8 @@ void studentMenu(Identity*& student);
 int main() {
 
 
+	/*Student s;
+	s.applyOrder();*/
 
 	while (true) {
 		std::cout << "\t\t\t\t==========欢迎来到机房预约系统==========" << std::endl;
