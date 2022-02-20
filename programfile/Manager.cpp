@@ -163,6 +163,26 @@ void Manager::showComputer() {
 
 void Manager::cleanFile() {
 
+	int select;
+	std::cout << "请确认是否清空:" << std::endl;
+	std::cout << "1.是" << std::endl;
+	std::cout << "0.否" << std::endl;
+
+	do {
+		if ((std::cin >> select) && (select == 1 || select == 0)) break;
+		std::cout << "输入有误，请重新输入" << std::endl;
+		std::cin.clear();/*清空输入缓冲区*/
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	} while (true);
+
+	if (select == 1) {
+		std::ofstream ofs(ORDER_FILE, std::ios::trunc);/*创建一个空文件覆盖掉原有的文件*/
+		ofs.close();
+		std::cout << "清空成功" << std::endl;
+	}
+	else std::cout << "已取消" << std::endl;
+	system("pause");
+	system("cls");
 }
 
 

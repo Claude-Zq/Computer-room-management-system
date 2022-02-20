@@ -210,7 +210,6 @@ void managerMenu(Identity*& manager) {
 		}
 		else if (select == 4) {
 			/*清空预约*/
-			std::cout << "[清空预约]" << std::endl;
 			pMan->cleanFile();
 		}
 		else if (select == 0) {
