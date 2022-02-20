@@ -96,6 +96,28 @@ void Student::applyOrder() {
 
 void Student::showMyOrder() {
 
+	OrderFile of;
+	int flag = 1;/*没有预约记录的标志变量*/
+	for (int i = 0; i < of.m_size; i++) {
+
+		if (atoi(of.m_orderData[i]["stuId"].c_str()) == this->m_id) {
+			
+			std::cout << "预约时间: 周" << of.m_orderData[i]["date"]
+				<< "\t时段: " << (of.m_orderData[i]["interval"] == "1" ? "上午" : "下午")
+				<< "\t机房: " << of.m_orderData[i]["roomId"]<<"\t状态: ";
+			
+			int status = atoi(of.m_orderData[i]["status"].c_str());
+			//0 取消预约 1 审核中 2 已预约 -1预约失败
+			if (status == 1) std::cout << "审核中" << std::endl;
+			else if(status == 2) std::cout << "已预约" << std::endl;
+			else if (status == -1) std::cout << "预约失败" << std::endl;
+			else if (status == 0) std::cout << "已取消" << std::endl;
+			flag = 0;
+		}
+	}
+	if(flag) std::cout << "无预约记录" << std::endl;
+	system("pause");
+	system("cls");
 }
 
 void Student::showALLOrder() {

@@ -5,6 +5,8 @@
 #include"ComputerRoom.h"
 #include"globalFile.h"
 #include<fstream>
+#include"OrderFile.h"
+#include<cstdlib>
 
 
 /*Ñ§ÉúÀà*/

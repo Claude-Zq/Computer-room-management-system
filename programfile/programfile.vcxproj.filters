@@ -27,6 +27,9 @@
     <ClCompile Include="Manager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="OrderFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Identity.h">
@@ -45,6 +48,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="ComputerRoom.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OrderFile.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

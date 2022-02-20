@@ -6,6 +6,7 @@
 #include"Student.h"
 #include"Teacher.h"
 #include"Manager.h"
+#include"OrderFile.h"
 
 
 //登录功能
@@ -19,9 +20,8 @@ void studentMenu(Identity*& student);
 
 int main() {
 
-
-	/*Student s;
-	s.applyOrder();*/
+	/*Student s(5,"李四","123456");
+	s.showMyOrder();*/
 
 	while (true) {
 		std::cout << "\t\t\t\t==========欢迎来到机房预约系统==========" << std::endl;
