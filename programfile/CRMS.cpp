@@ -205,7 +205,7 @@ void managerMenu(Identity*& manager) {
 		}
 		else if (select == 3) {
 			/*查看机房*/
-			std::cout << "[查看机房]" << std::endl;
+			std::cout << "机房信息如下:\n" << std::endl;
 			pMan->showComputer();
 		}
 		else if (select == 4) {

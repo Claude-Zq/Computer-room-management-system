@@ -145,6 +145,7 @@
     <ClCompile Include="Teacher.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ComputerRoom.h" />
     <ClInclude Include="globalFile.h" />
     <ClInclude Include="Identity.h" />
     <ClInclude Include="Manager.h" />

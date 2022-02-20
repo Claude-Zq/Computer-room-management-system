@@ -150,7 +150,14 @@ void Manager::showPerson() {
 
 
 void Manager::showComputer() {
-
+	if (vCom.empty()) std::cout << "无机房信息" << std::endl;
+	else {
+		std::cout << "编号\t容量" << std::endl;
+		for (auto it = vCom.begin(); it != vCom.end(); it++) 
+			std::cout << it->m_comId << '\t' << it->m_MaxNum << std::endl;
+	}
+	system("pause");
+	system("cls");
 }
 
 
@@ -163,6 +170,7 @@ void Manager::initVector() {
 
 	vStu.clear();
 	vTea.clear();
+	vCom.clear();
 	
 	//读取学生文件中的信息
 	std::ifstream ifs;
@@ -172,7 +180,7 @@ void Manager::initVector() {
 		Student s;
 		while (ifs >> s.m_id >> s.m_name >> s.m_pwd) vStu.push_back(s);
 	}
-	ifs.close();/*学生初始化完成*/
+	ifs.close();/*学生账号信息初始化完成*/
 
 
 	/*读取老师的文件信息*/
@@ -181,7 +189,15 @@ void Manager::initVector() {
 		Teacher t;
 		while (ifs >> t.m_empId >> t.m_name >> t.m_pwd) vTea.push_back(t);
 	}
-	ifs.close();/*学生初始化完成*/
+	ifs.close();/*教师账号信息初始化完成*/
+
+	/*读取机房的文件信息*/
+	ifs.open(COMPUTER_FILE, std::ios::in);
+	if(ifs.is_open()) {
+		ComputerRoom c;
+		while (ifs >> c.m_comId >> c.m_MaxNum) vCom.push_back(c);
+	}
+	ifs.close();/*机房信息初始化完成*/
 }
 
 
