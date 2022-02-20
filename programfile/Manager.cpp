@@ -100,12 +100,51 @@ void Manager::addPerson() {
 	ofs << id << " " << name << " " << pwd << " " << std::endl;
 	std::cout << "添加成功" << std::endl;
 	ofs.close();
+	initVector();/*更新容器*/
 
 	system("pause");
 	system("cls");
 }
 
 void Manager::showPerson() {
+
+	std::cout << "---------------------------------" << std::endl;
+	std::cout << "|\t 1.查看所有学生\t\t|" << std::endl;
+	std::cout << "|\t 2.查看所有老师\t\t|" << std::endl;
+	std::cout << "---------------------------------" << std::endl;
+
+	int select = 0;
+	do {
+		std::cout << "请输入您的选择:" << std::endl;
+		if (std::cin >> select) break;
+		std::cout << "输入有误，请重新输入" << std::endl;
+		std::cin.clear();/*清空输入缓冲区*/
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	} while (true);
+
+	if (select == 1) {
+		if (vStu.empty()) std::cout << "无学生账号记录" << std::endl;
+		else {
+			std::cout << "学号\t姓名\t密码" << std::endl;
+			for (auto it = vStu.begin(); it != vStu.end(); it++) {
+				std::cout << it->m_id << '\t' << it->m_name << '\t' << it->m_pwd << std::endl;
+			}
+		}
+	}
+	else if (select == 2) {
+		if (vTea.empty()) std::cout << "无老师账号记录" << std::endl;
+		else {
+			std::cout << "职工号\t姓名\t密码" << std::endl;
+			for (auto it = vTea.begin(); it != vTea.end(); it++) {
+				std::cout << it->m_empId << '\t' << it->m_name << '\t' << it->m_pwd << std::endl;
+			}
+		}
+	}
+	else{
+		std::cout << "无该选项!" << std::endl;
+	}
+	system("pause");
+	system("cls");
 
 }
 

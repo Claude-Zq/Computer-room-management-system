@@ -16,6 +16,10 @@ void managerMenu(Identity*& manager);
 
 int main() {
 
+	/*Manager m;
+	m.showPerson();*/
+
+
 	while (true) {
 		std::cout << "\t\t\t\t==========欢迎来到机房预约系统==========" << std::endl;
 		std::cout << "\t\t\t\t----------------------------------------" << std::endl;
@@ -196,7 +200,7 @@ void managerMenu(Identity*& manager) {
 		}
 		else if (select == 2) {
 			/*查看账号*/
-			std::cout << "[查看账号]" << std::endl;
+			std::cout << "\t   [查看账号]" << std::endl;
 			pMan->showPerson();
 		}
 		else if (select == 3) {
