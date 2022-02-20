@@ -1,5 +1,6 @@
 #pragma once
 #include"Identity.h"
+#include<iostream>
 
 
 
@@ -7,12 +8,9 @@
 class Student :public Identity{
 
 public:
-	//默认构造
-	Student();
-
 
 	//有参构造
-	Student(int id, std::string name, std::string pwd);
+	Student(int id=0, std::string name="", std::string pwd="");
 
 	//菜单界面
 	virtual void operMenu();

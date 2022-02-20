@@ -14,10 +14,11 @@ void LogIn(std::string fileName, int type);
 //进入管理员子菜单界面
 void managerMenu(Identity*& manager);
 
+//进入学生子菜单界面
+void studentMenu(Identity*& student);
+
 int main() {
 
-	/*Manager m;
-	m.showPerson();*/
 
 
 	while (true) {
@@ -134,6 +135,7 @@ void LogIn(std::string fileName, int type) {
 				system("pause");
 				system("cls");
 				pPerson = new Student(id, name, pwd);
+				studentMenu(pPerson);
 				return;
 			}
 		}
@@ -228,3 +230,47 @@ void managerMenu(Identity*& manager) {
 	}
 }
 
+
+//学生菜单
+void studentMenu(Identity*& student) {
+	while (true) {
+		/*学生菜单*/
+		student->operMenu();
+
+		Student* pStu = (Student*)student;
+
+		int select;/*输入用户的选择*/
+		do {
+			std::cout << "输入您的选择: " << std::endl;
+			if (std::cin >> select) break; /*输入合法性检查*/
+			std::cout << "输入有误，请重新输入" << std::endl;
+			std::cin.clear();/*清空输入缓冲区*/
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		} while (true);
+
+		if (select == 1) { /*申请预约*/
+			pStu->applyOrder();
+		}
+		else if (select == 2) { //查看自生预约
+			pStu->showMyOrder();
+		}
+		else if (select == 3) {/*查看所有预约*/
+			pStu->showALLOrder();
+		}
+		else if (select == 4) {/*取消预约*/
+			pStu->cancelOrder();
+		}
+		else if (select == 0) {
+			delete student;
+			std::cout << "注销成功" << std::endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+		else {
+			std::cout << "无该选项，请重新输入" << std::endl;
+			system("pause");
+			system("cls");
+		}
+	}
+}
