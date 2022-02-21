@@ -2,6 +2,7 @@
 //#define _CRT_SECUER_NO_WARNIGNS
 #include"Identity.h"
 #include<iostream>
+#include"OrderFile.h"
 
 class Teacher:public Identity {
 
