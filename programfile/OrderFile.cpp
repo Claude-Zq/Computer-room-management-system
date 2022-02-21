@@ -20,6 +20,7 @@ OrderFile::OrderFile() {
 				key = temp.substr(0, pos);
 				value = temp.substr(pos + 1, temp.size() - pos-1);
 				m[key] = value;
+				
 			}
 		}
 		ifs.get();/*³ÔµôÐÐÄ©»Ø³µ*/
@@ -91,6 +92,7 @@ void OrderFile::updateOrder(){
 		ofs << "date:" << this->m_orderData[i]["date"] << " "
 			<< "interval:" << this->m_orderData[i]["interval"] << " "
 			<< "stuId:" << this->m_orderData[i]["stuId"] << " "
+			<<"stuName:"<<this->m_orderData[i]["stuName"]<<" "
 			<< "roomId:" << this->m_orderData[i]["roomId"] << " "
 			<< "status:" << this->m_orderData[i]["status"] << std::endl;
 	}
