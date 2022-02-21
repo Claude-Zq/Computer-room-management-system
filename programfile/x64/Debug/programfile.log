@@ -1,5 +1,5 @@
 ﻿  CRMS.cpp
-  OrderFile.cpp
-D:\repo\Computer-room-management-system\programfile\OrderFile.cpp(17,24): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  Manager.cpp
+  Teacher.cpp
   正在生成代码...
   programfile.vcxproj -> D:\repo\Computer-room-management-system\programfile\x64\Debug\programfile.exe

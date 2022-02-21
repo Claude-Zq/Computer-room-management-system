@@ -3,6 +3,7 @@
 #include"Identity.h"
 #include<iostream>
 #include"OrderFile.h"
+#include<vector>
 
 class Teacher:public Identity {
 

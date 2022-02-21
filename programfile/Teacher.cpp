@@ -50,5 +50,60 @@ void Teacher::showAllOrder() {
 
 
 void Teacher::validOrder() {
+	OrderFile of;
+	int flag = 1;/*没有待审核的标志变量*/
 
+	std::vector<int> v;/*用于存放待审核预约在of.m_orderData的索引*/
+	for (int i = 0,j = 0; i < of.m_size; i++) {
+
+		if (atoi(of.m_orderData[i]["status"].c_str()) == 1) {
+			v.push_back(i);
+			if (flag) std::cout << "待审核的预约记录如下" << std::endl;
+			std::cout << ++j << "、预约时间: 周" << of.m_orderData[i]["date"]
+				<< "  时段: " << (of.m_orderData[i]["interval"] == "1" ? "上午" : "下午")
+				<< "  学号:" << of.m_orderData[i]["stuId"]
+				<< "  姓名:" << of.m_orderData[i]["stuName"]
+				<< "  房号: " << of.m_orderData[i]["roomId"] << std::endl;
+			flag = 0;
+		}
+	}
+	if (flag) std::cout << "无待审核的预约记录" << std::endl;
+	else {
+		std::cout << "\n请输入审核的预约编号(返回请按0)" << std::endl;
+		int select;
+		do {
+			if (std::cin >> select && (select >= 0 && select <= v.size()))break;
+			std::cout << "输入有误,请重新输入" << std::endl;
+			std::cin.clear();/*清空输入缓冲区*/
+			std::cin.ignore(std::streamsize(std::numeric_limits<std::streamsize>::max()), '\n');
+		} while (true);
+
+		if (select == 0) {/*返回子菜单*/
+			std::cout << "已返回" << std::endl;
+		}
+		else {
+			std::cout << "请选择:\n1.同意\n0.不同意" <<std::endl;
+			int selection;
+			do {
+				if (std::cin >> selection && (selection == 1 || selection == 0))break;
+				std::cout << "输入有误,请重新输入" << std::endl;
+				std::cin.clear();/*清空输入缓冲区*/
+				std::cin.ignore(std::streamsize(std::numeric_limits<std::streamsize>::max()), '\n');
+			} while (true);
+
+			if (selection == 0) {
+				of.m_orderData[v[select - 1]]["status"] = "-1";/*不批准*/
+				std::cout << "已经拒绝" << std::endl;
+			} 
+			else {
+				of.m_orderData[v[select - 1]]["status"] = "2";/*批准*/
+				std::cout << "已同意" << std::endl;
+			}
+			of.updateOrder();
+		}
+
+	}
+	system("pause");
+	system("cls");
+	
 }
