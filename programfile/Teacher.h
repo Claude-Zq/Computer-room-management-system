@@ -1,15 +1,14 @@
 #pragma once
 //#define _CRT_SECUER_NO_WARNIGNS
 #include"Identity.h"
+#include<iostream>
 
 class Teacher:public Identity {
 
 public:
-	//默认构造
-	Teacher();
 
 	//有参构造
-	Teacher(int employeeId, std::string name, std::string pwd);
+	Teacher(int employeeId = 0, std::string name="", std::string pwd="");
 
 	//菜单界面
 	virtual void operMenu();

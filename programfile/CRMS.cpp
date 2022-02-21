@@ -18,59 +18,66 @@ void managerMenu(Identity*& manager);
 //进入学生子菜单界面
 void studentMenu(Identity*& student);
 
+//进入教师子菜单界面
+void teacherMenu(Identity*& teacher);
+
+
 int main() {
 
+
+	Teacher t(1, "老王", "123");
+	t.operMenu();
 	
-	while (true) {
-		std::cout << "\t\t\t\t==========欢迎来到机房预约系统==========" << std::endl;
-		std::cout << "\t\t\t\t----------------------------------------" << std::endl;
-		std::cout << "\t\t\t\t|                                      |" << std::endl;
-		std::cout << "\t\t\t\t|              1.学生代表              |" << std::endl;
-		std::cout << "\t\t\t\t|                                      |" << std::endl;
-		std::cout << "\t\t\t\t|                                      |" << std::endl;
-		std::cout << "\t\t\t\t|              2.老师                  |" << std::endl;
-		std::cout << "\t\t\t\t|                                      |" << std::endl;
-		std::cout << "\t\t\t\t|                                      |" << std::endl;
-		std::cout << "\t\t\t\t|              3.管理员                |" << std::endl;
-		std::cout << "\t\t\t\t|                                      |" << std::endl;
-		std::cout << "\t\t\t\t|                                      |" << std::endl;
-		std::cout << "\t\t\t\t|              0.退出                  |" << std::endl;
-		std::cout << "\t\t\t\t|                                      |" << std::endl;
-		std::cout << "\t\t\t\t----------------------------------------" << std::endl;
+	//while (true) {
+	//	std::cout << "\t\t\t\t==========欢迎来到机房预约系统==========" << std::endl;
+	//	std::cout << "\t\t\t\t----------------------------------------" << std::endl;
+	//	std::cout << "\t\t\t\t|                                      |" << std::endl;
+	//	std::cout << "\t\t\t\t|              1.学生代表              |" << std::endl;
+	//	std::cout << "\t\t\t\t|                                      |" << std::endl;
+	//	std::cout << "\t\t\t\t|                                      |" << std::endl;
+	//	std::cout << "\t\t\t\t|              2.老师                  |" << std::endl;
+	//	std::cout << "\t\t\t\t|                                      |" << std::endl;
+	//	std::cout << "\t\t\t\t|                                      |" << std::endl;
+	//	std::cout << "\t\t\t\t|              3.管理员                |" << std::endl;
+	//	std::cout << "\t\t\t\t|                                      |" << std::endl;
+	//	std::cout << "\t\t\t\t|                                      |" << std::endl;
+	//	std::cout << "\t\t\t\t|              0.退出                  |" << std::endl;
+	//	std::cout << "\t\t\t\t|                                      |" << std::endl;
+	//	std::cout << "\t\t\t\t----------------------------------------" << std::endl;
 
-		int select;
-		do {
-			std::cout << "输入您的选择: " << std::endl;
-			if (std::cin >> select) break; /*输入合法性检查*/
-			std::cout << "输入有误，请重新输入" << std::endl;
-			std::cin.clear();/*清空输入缓冲区*/
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		} while (true);
+	//	int select;
+	//	do {
+	//		std::cout << "输入您的选择: " << std::endl;
+	//		if (std::cin >> select) break; /*输入合法性检查*/
+	//		std::cout << "输入有误，请重新输入" << std::endl;
+	//		std::cin.clear();/*清空输入缓冲区*/
+	//		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	//	} while (true);
 
-		switch (select) {
-		case 1://学生
-			LogIn(STUDENT_FILE, 1);
-			break;
-		case 2://老师
-			LogIn(TEACHER_FILE, 2);
-			break;
-		case 3://管理员
-			LogIn(ADMIN_FILE, 3);
-			break;
-		case 0://退出
-			std::cout << "欢迎下次使用" << std::endl;
-			system("pause");
-			return 0;
-			break;
-		default:
-			std::cout << "无该选项，请重新选择" << std::endl;
-			system("pause");
-			system("cls");/*按任意键后清屏*/
-			break;
-		}
+	//	switch (select) {
+	//	case 1://学生
+	//		LogIn(STUDENT_FILE, 1);
+	//		break;
+	//	case 2://老师
+	//		LogIn(TEACHER_FILE, 2);
+	//		break;
+	//	case 3://管理员
+	//		LogIn(ADMIN_FILE, 3);
+	//		break;
+	//	case 0://退出
+	//		std::cout << "欢迎下次使用" << std::endl;
+	//		system("pause");
+	//		return 0;
+	//		break;
+	//	default:
+	//		std::cout << "无该选项，请重新选择" << std::endl;
+	//		system("pause");
+	//		system("cls");/*按任意键后清屏*/
+	//		break;
+	//	}
 
 
-	}
+	//}
 	
 
 	system("pause");
@@ -177,7 +184,7 @@ void LogIn(std::string fileName, int type) {
 }
 
 
-//管理员菜单
+
 void managerMenu(Identity*& manager) {
 	while (true) {
 		//管理员菜单
@@ -231,7 +238,7 @@ void managerMenu(Identity*& manager) {
 }
 
 
-//学生菜单
+
 void studentMenu(Identity*& student) {
 	while (true) {
 		/*学生菜单*/
@@ -273,4 +280,44 @@ void studentMenu(Identity*& student) {
 			system("cls");
 		}
 	}
+}
+
+
+void teacherMenu(Identity*& teacher) {
+	
+	while (true) {
+		
+		/*教师菜单*/
+		teacher->operMenu();
+		Teacher* pTea = (Teacher*)teacher;
+
+		int select;/*输入用户的选择*/
+		do {
+			std::cout << "输入您的选择: " << std::endl;
+			if (std::cin >> select) break; /*输入合法性检查*/
+			std::cout << "输入有误，请重新输入" << std::endl;
+			std::cin.clear();/*清空输入缓冲区*/
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		} while (true);
+
+		if (select == 1) { /*查看所有预约*/
+			pTea->showAllOrder();
+		}
+		else if (select == 2) {/*审核预约*/
+			pTea->validOrder();
+		}
+		else if (select == 0) {/*注销登录*/
+			delete teacher;
+			std::cout << "注销成功" << std::endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+		else {
+			std::cout << "无该选项，请重新输入" << std::endl;
+			system("pause");
+			system("cls");
+		}
+	}
+
 }
