@@ -131,3 +131,9 @@ int date::operator-(const date& d) {
 	while (early < late) { ++early; ++ret; }
 	return *this > d ? ret : -ret;
 }
+
+/*按 2022/02/22格式输出日期*/
+std::ostream& operator<<(std::ostream& out, date& d) {
+	printf("%04d/%02d/%02d", d.year, d.month, d.day);
+	return out;
+}

@@ -1,2 +1,8 @@
-﻿  CRMS.cpp
+﻿  AccountFile.cpp
+  CRMS.cpp
+  CRMS_manager.cpp
+  正在生成代码...
+D:\repo\Computer-room-management-system\version2\AccountFile.cpp(76): warning C4715: “AccountFile::modifyName”: 不是所有的控件路径都返回值
+D:\repo\Computer-room-management-system\version2\AccountFile.cpp(82): warning C4715: “AccountFile::modifyPwd”: 不是所有的控件路径都返回值
+x64\Debug\Reservation.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
   version2.vcxproj -> D:\repo\Computer-room-management-system\version2\x64\Debug\version2.exe

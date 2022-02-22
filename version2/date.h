@@ -1,5 +1,6 @@
 #pragma once
 #include<cstdio>
+#include<iostream>
 
 
 /*判断是否是闰年*/
@@ -11,11 +12,16 @@ class date {
 public:
 
 	date(int Year = 0, int Month = 1, int Day = 1);
+
+	/*按 2022/02/22格式输出日期*/
+	friend std::ostream& operator<<(std::ostream& out, const date& d);
+
 	bool operator<(const date& d);
 	bool operator>(const date& d);
 	bool operator==(const date& d);
 	bool operator!=(const date& d);
 	date& operator=(const date& d);
+
 
 	/*计算一个日期加上n(n>=0)天后是什么日期*/
 	date operator+(int n);
@@ -24,22 +30,11 @@ public:
 
 	/*计算一个日期减去n(n>=0)天后是什么日期*/
 	date operator-(int n);
-	/*倒退n(n>=0)天*/
-	date& operator-=(int n);
 
 	/*前置递增运算*/
 	date& operator++();
 	/*后置递增运算*/
 	date operator++(int);
-
-	/*前置递减运算符*/
-	date& operator--();
-
-	/*后置递减运算符*/
-	date operator--(int);
-
-	/*交换两个date*/
-	void swap(date& d);
 
 	/*返回所处月份的总天数*/
 	int getDays();
