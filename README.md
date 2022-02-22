@@ -165,7 +165,66 @@
 
 ### 文件类
 
-#### 
+注意:以下文件类的对象均只在构造函数中读取文件信息，析构时才将改动同步到文件中，所以请勿对同一文件同时使用多个对象
+
+#### AccountFile类
+
+###### 对内接口
+
+* AccountFile(std::string fileName);/*构造函数(参数时管理的文件名)*/
+* void initMap();/*初始化m_allAccount*/
+* void saveMap();/*将容器中保存的信息保存到文件中*/
+* std::string m_fileName;/*维护的文件名称*/
+
+
+
+###### 对外接口
+
+* ~AccountFile();/*析构时保存文件*/
+* std::map<std::string, Account> m_allAccount;/*存放该文件中的所有账号信息(id-Account的映射)
+
+* bool findId(std::string id);/*查找容器中是否有指定id第账号*/
+* int verify(const Account& a);/*验证账号:0-没有账号 1-验证成功 -1-密码错误 2-姓名错误*/
+* bool addAccount(const Account& a);/*添加账号 已有相同id时返回false*/
+* bool deleteAccount(std::string id);/*按id号删除账号 无对应id时返回false*/
+* bool modifyName(std::string id, std::string name);/*修改账号id对应的姓名无对应id时返回false*/
+* bool modifyPwd(std::string id, std::string pwd);/*修改账号id对应的密码  无对应id时返回false*/
+
+
+
+#### ComputerRoomFile类
+
+###### 对外接口
+
+* ComputerRoomFile(std::string fileName);/*构造函数*/
+* std::map<int, int> m_allRoom;/*所有的机房信息 编号-容量*/
+* bool m_isOpen;/*文件是否打开成功*/
+
+###### 对内的接口
+
+* void initMap();/*初始化容器*/
+* void saveMap();/*将容器内的信息保存到文件中*/
+* std::string m_fileName;/*管理的文件名*/
+* ~ComputerRoomFile();/*析构函数*/
+
+
+
+#### ReservationFile类
+
+###### 对外接口
+
+* ReservationFile(std::string fileName);/*有参构造,传入文件名*/
+* void clearFlile();/*将文件清空*/
+* std::vector<Reservation> m_allResv;/*存放所有的预约信息*/
+
+###### 对内接口
+
+* ~ReservationFile();/*析构函数*/
+* void initVector();	/*从文件中读取预约记录到容器中*/
+* std::string m_fileName;/*管理的文件名*/
+* void saveVector();/*将容器中的预约记录存到文件中*/
+
+
 
 
 

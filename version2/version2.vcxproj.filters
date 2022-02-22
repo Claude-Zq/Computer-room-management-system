@@ -42,6 +42,9 @@
     <ClInclude Include="ComputerRoomFile.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Student.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Reservation.h">
@@ -68,10 +71,13 @@
     <ClCompile Include="User.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="administrator.cpp">
+    <ClCompile Include="Administrator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ComputerRoomFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Student.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

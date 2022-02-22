@@ -17,12 +17,6 @@ public:
 	/*析构函数*/
 	~ReservationFile();
 
-	/*从文件中读取预约记录到容器中*/
-	void initVector();
-
-	/*将容器中的预约记录存到文件中*/
-	void saveVector();
-
 	/*将文件清空*/
 	void clearFlile();
 
@@ -31,5 +25,10 @@ public:
 
 private:
 	std::string m_fileName;
+	/*从文件中读取预约记录到容器中*/
+	void initVector();
+
+	/*将容器中的预约记录存到文件中*/
+	void saveVector();
 	
 };

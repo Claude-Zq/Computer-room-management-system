@@ -15,11 +15,6 @@ public:
 	/*只有对象析构时才保存之前的更改，所以请避免同时使用多个对象*/
 	~AccountFile();
 
-	/*初始化m_allAccount*/
-	void initMap();
-
-	/*将容器中保存的信息保存到文件中*/
-	void saveMap();
 
 	/*查找容器中是否有指定id第账号*/
 	bool findId(std::string id);
@@ -42,6 +37,12 @@ public:
 	std::map<std::string, Account> m_allAccount;
 
 private:
+	/*初始化m_allAccount*/
+	void initMap();
+
+	/*将容器中保存的信息保存到文件中*/
+	void saveMap();
+
 	std::string m_fileName;
 	
 };
