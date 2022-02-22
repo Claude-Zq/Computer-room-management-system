@@ -39,7 +39,9 @@ public:
 	/*修改账号id对应的密码  无对应id时返回false*/
 	bool modifyPwd(std::string id, std::string pwd);
 
+	std::map<std::string, Account> m_allAccount;
+
 private:
 	std::string m_fileName;
-	std::map<std::string, Account> m_allAccount;
+	
 };

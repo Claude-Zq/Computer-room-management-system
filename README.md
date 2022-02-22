@@ -127,5 +127,45 @@
 
 
 
+### 用户类
+
+#### 基类User
+
+* 成员变量: Account m_account //存放账号信息
+* 成员函数  
+  * virtual void showMenu() = 0;//展示菜单
+  * virtual void changePwd() = 0;//修改密码
+  * void showAllRsv();//展示所有预约记录
+
+#### 子类Student
+
+
+
+#### 子类Teacher
+
+
+
+#### 子类Administrator
+
+* Administrator::Administrator(std::string id = "", std::string name = "", std::string pwd = "") //有参构造(账号、姓名、密码)
+
+* virtual void Administrator::showMenu() //展示菜单
+* virtual void Administrator::changePwd()修改自身密码
+* void Administrator::addAccount() //添加账号
+* void Administrator::deleteAccount()//删除账号
+*  void Administrator::addComputerRoom() //添加机房信息
+*  void Administrator::showComputerRoom() //查看机房信息
+*  void Administrator::modifyComputerRoom() //修改机房信息
+* void Administrator::showAccount()//查看账号
+* void Administrator::clearRsv()//清空预约记录
+
+
+
+
+
+### 文件类
+
+#### 
+
 
 

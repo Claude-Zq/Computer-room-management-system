@@ -10,7 +10,7 @@ public:
 	/*展示菜单*/
 	virtual void showMenu() = 0;
 
-	/*修改密码*/
+	/*修改自身密码*/
 	virtual void changePwd() = 0;
 
 	/*展示所有预约记录*/

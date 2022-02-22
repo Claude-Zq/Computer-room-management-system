@@ -141,14 +141,18 @@
   <ItemGroup>
     <ClInclude Include="Account.h" />
     <ClInclude Include="AccountFile.h" />
+    <ClInclude Include="Administrator.h" />
     <ClInclude Include="CRMS_manager.h" />
     <ClInclude Include="date.h" />
     <ClInclude Include="globalFile.h" />
     <ClInclude Include="ReservationFile.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="ComputerRoomFile.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AccountFile.cpp" />
+    <ClCompile Include="administrator.cpp" />
+    <ClCompile Include="ComputerRoomFile.cpp" />
     <ClCompile Include="CRMS.cpp" />
     <ClCompile Include="CRMS_manager.cpp" />
     <ClCompile Include="date.cpp" />
