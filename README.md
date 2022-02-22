@@ -3,17 +3,11 @@
 
 
 
+## 原版
 
 
 
-
-
-
-
-
-
-
-##  身份类
+###  身份类
 
 
 
@@ -72,7 +66,7 @@
 
   
 
-## 登录模块
+### 登录模块
 
 * 全局文件：globalFile
 * 登录函数：void LogIn(std::string fileName, int type);*文件名，用户选择*
@@ -120,10 +114,14 @@
 
 
 
-## 改进方案
 
-* 将main函数文件中的全局函数封装成一个整体
-* 将OrderFile中.txt的文件的每一行封装成一个类
+
+##  重构版
+
+
+
+* 将原版中main函数文件中的全局函数封装成一个类，管理整个程序
+* 将Reservation.txt的文件的每一行封装成一个预约类Reservation,创建ReservationFile类，将对文件的操作转变为对容器的操作
 
 
 
