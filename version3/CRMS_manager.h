@@ -1,5 +1,7 @@
 #pragma once
 #include<iostream>
+#include"AccountFile.h"
+#include"globalFile.h"
 
 
 class CRMS_manager {

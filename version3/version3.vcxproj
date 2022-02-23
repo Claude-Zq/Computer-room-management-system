@@ -139,11 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AccountFile.cpp" />
     <ClCompile Include="CRMS.cpp" />
     <ClCompile Include="CRMS_manager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Account.h" />
+    <ClInclude Include="AccountFile.h" />
     <ClInclude Include="CRMS_manager.h" />
+    <ClInclude Include="globalFile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
