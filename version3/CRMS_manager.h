@@ -2,6 +2,7 @@
 #include<iostream>
 #include"AccountFile.h"
 #include"globalFile.h"
+#include"Administrator.h"
 
 
 class CRMS_manager {
@@ -21,6 +22,6 @@ public:
 	void tea_interface();
 
 	/*管理员用户界面*/
-	void admin_interface();
+	void admin_interface(Administrator& a);
 
 };

@@ -24,6 +24,24 @@
     <ClCompile Include="AccountFile.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="date.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Reservation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ReservationFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputerRoomFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Administrator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CRMS_manager.h">
@@ -36,6 +54,24 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="globalFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="date.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Reservation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ReservationFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Administrator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputerRoomFile.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,6 +3,7 @@
 
 int main() {
 
+
 	/*创建一个管理类对象,管理整个程序的运行*/
 	CRMS_manager cm;
 	while (true) {

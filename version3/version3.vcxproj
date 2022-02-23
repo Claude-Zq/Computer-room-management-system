@@ -140,14 +140,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AccountFile.cpp" />
+    <ClCompile Include="Administrator.cpp" />
+    <ClCompile Include="ComputerRoomFile.cpp" />
     <ClCompile Include="CRMS.cpp" />
     <ClCompile Include="CRMS_manager.cpp" />
+    <ClCompile Include="date.cpp" />
+    <ClCompile Include="Reservation.cpp" />
+    <ClCompile Include="ReservationFile.cpp" />
+    <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
     <ClInclude Include="AccountFile.h" />
+    <ClInclude Include="Administrator.h" />
+    <ClInclude Include="ComputerRoomFile.h" />
     <ClInclude Include="CRMS_manager.h" />
+    <ClInclude Include="date.h" />
     <ClInclude Include="globalFile.h" />
+    <ClInclude Include="Reservation.h" />
+    <ClInclude Include="ReservationFile.h" />
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -24,6 +24,8 @@ void User::showAllRsv(){
 		else if (it->m_status == 0) std::cout << "已取消";
 		else if (it->m_status == 1) std::cout << "审核中";
 		else if (it->m_status == 2) std::cout << "预约成功";
-		std::cout << "\t处理人:" << (it->m_empId == "??" ? "暂无" : it->m_empId) << std::endl;
+		std::cout << "\t处理人:" 
+			<< (it->m_empId == "??" ? "暂无" : it->m_empId) 
+			<< std::endl;
 	}
 }

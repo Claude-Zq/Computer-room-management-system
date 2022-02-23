@@ -1,5 +1,5 @@
 #include"CRMS_manager.h"
-
+#include"Administrator.h"
 
 
 /*展示主菜单*/
@@ -73,10 +73,9 @@ void CRMS_manager::login(int type) {
 		}
 		/*管理员*/
 		else if (type == 3) {
-			std::cout << "管理员用户界面" << std::endl;
+			Administrator admin(a);
+			admin_interface(admin);
 		}
-		system("pause");
-		system("cls");
 	}
 }
 
@@ -91,6 +90,64 @@ void CRMS_manager::tea_interface() {
 }
 
 /*管理员用户界面*/
-void CRMS_manager::admin_interface() {
+void CRMS_manager::admin_interface(Administrator& a) {
+	
+	while (true) {
+		//管理员菜单
+		a.showMenu();
+		int select = 0;/*输入用户的选择*/
+		do {
+			std::cout << "输入您的选择: " << std::endl;
+			if (std::cin >> select) break; /*输入合法性检查*/
+			std::cout << "输入有误，请重新输入" << std::endl;
+			std::cin.clear();/*清空输入缓冲区*/
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		} while (true);
 
+		if (select == 1) {
+			/*添加账号*/
+			a.addAccount();
+		}
+		else if (select == 2) {
+			/*查看账号*/
+			a.showAccount();
+		}
+		else if (select == 3) {
+			/*删除账号*/
+			a.deleteAccount();
+		}
+		else if (select == 4) {
+			/*修改密码*/
+			a.changePwd();
+
+		}
+		else if (select == 5) {
+			/*添加机房*/
+			a.addComputerRoom();
+		}
+		else if (select == 6) {
+			/*查看机房*/
+			a.showComputerRoom();
+		}
+		else if (select == 7) {
+			/*修改机房*/
+			a.modifyComputerRoom();
+		}
+		else if (select == 8) {
+			/*清空预约*/
+			a.clearRsv();
+		}
+		else if (select == 0) {
+			std::cout << "注销成功" << std::endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+		else {
+			std::cout << "无该选项，请重新输入" << std::endl;
+			system("pause");
+			system("cls");
+		}
+
+	}
 }
