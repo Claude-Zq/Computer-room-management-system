@@ -1,16 +1,9 @@
+
 #include<iostream>
-#include"ReservationFile.h"
-
-
-void test01() {
-}
+#include"CRMS_manager.h"
 
 int main() {
 
-
-	
-	test01();
 	system("pause");
 	return 0;
-
 }

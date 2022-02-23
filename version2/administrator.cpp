@@ -1,7 +1,7 @@
 #include"Administrator.h"
 
 //有参构造(账号、姓名、密码)
-Administrator::Administrator(std::string id = "", std::string name = "", std::string pwd = "") {
+Administrator::Administrator(std::string id, std::string name , std::string pwd) {
 	this->m_account.m_id = id;
 	this->m_account.m_name = name;
 	this->m_account.m_pwd = pwd;
