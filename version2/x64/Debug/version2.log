@@ -1,8 +1,6 @@
-﻿  CRMS.cpp
-x64\Debug\Reservation.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
-ReservationFile.obj : error LNK2019: 无法解析的外部符号 "public: __cdecl Reservation::Reservation(void)" (??0Reservation@@QEAA@XZ)，函数 "private: void __cdecl ReservationFile::initVector(void)" (?initVector@ReservationFile@@AEAAXXZ) 中引用了该符号
-Student.obj : error LNK2001: 无法解析的外部符号 "public: __cdecl Reservation::Reservation(void)" (??0Reservation@@QEAA@XZ)
-Student.obj : error LNK2019: 无法解析的外部符号 "class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl operator<<(class std::basic_ostream<char,struct std::char_traits<char> > &,class date const &)" (??6@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@std@@AEAV01@AEBVdate@@@Z)，函数 "public: void __cdecl Student::cancelRsv(void)" (?cancelRsv@Student@@QEAAXXZ) 中引用了该符号
-Teacher.obj : error LNK2001: 无法解析的外部符号 "class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl operator<<(class std::basic_ostream<char,struct std::char_traits<char> > &,class date const &)" (??6@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@std@@AEAV01@AEBVdate@@@Z)
-User.obj : error LNK2001: 无法解析的外部符号 "class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl operator<<(class std::basic_ostream<char,struct std::char_traits<char> > &,class date const &)" (??6@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@std@@AEAV01@AEBVdate@@@Z)
-D:\repo\Computer-room-management-system\version2\x64\Debug\version2.exe : fatal error LNK1120: 2 个无法解析的外部命令
+﻿  Administrator.cpp
+  CRMS.cpp
+  CRMS_manager.cpp
+  Teacher.cpp
+c1xx : fatal error C1083: 无法打开源文件: “Teacher.cpp”: No such file or directory
+  正在生成代码...
