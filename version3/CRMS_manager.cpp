@@ -70,7 +70,8 @@ void CRMS_manager::login(int type) {
 		}
 		/*老师*/
 		else if (type == 2) {
-			std::cout << "老师用户界面" << std::endl;
+			Teacher tes(a);
+			tea_interface(tes);
 		}
 		/*管理员*/
 		else if (type == 3) {
@@ -130,8 +131,45 @@ void CRMS_manager::stu_interface(Student& s) {
 }
 
 /*老师用户界面*/
-void CRMS_manager::tea_interface() {
+void CRMS_manager::tea_interface(Teacher &t) {
+	while (true) {
+		//老师菜单
+		t.showMenu();
+		int select = 0;/*输入用户的选择*/
+		do {
+			std::cout << "输入您的选择: " << std::endl;
+			if (std::cin >> select) break; /*输入合法性检查*/
+			std::cout << "输入有误，请重新输入" << std::endl;
+			std::cin.clear();/*清空输入缓冲区*/
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		} while (true);
 
+		if (select == 1) {
+			/*查看所有预约*/
+			t.showAllRsv();
+		}
+		else if (select == 2) {
+			/*审核预约*/
+			t.auditRsv();
+		}
+		else if (select == 3) {
+			/*修改密码*/
+			t.changePwd();
+		}
+		else if (select == 0) {
+			/*注销登录*/
+			std::cout << "注销成功" << std::endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+		else {
+			std::cout << "无该选项，请重新输入" << std::endl;
+			system("pause");
+			system("cls");
+		}
+
+	}
 }
 
 /*管理员用户界面*/
