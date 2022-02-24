@@ -43,9 +43,9 @@ void Administrator::showMenu() {
 void Administrator::deleteAccount() {
 
 	std::cout << "请输入删除账号的类型" << std::endl;
-	std::cout << "1.添加学生" << std::endl;
-	std::cout << "2.添加老师" << std::endl;
-	std::cout << "3.添加管理员" << std::endl;
+	std::cout << "1.学生" << std::endl;
+	std::cout << "2.老师" << std::endl;
+	std::cout << "3.管理员" << std::endl;
 
 
 	int select;
@@ -89,12 +89,26 @@ void Administrator::deleteAccount() {
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 
-	if (af.deleteAccount(id)) std::cout << "删除成功" << std::endl;
-	else std::cout << "删除失败,账号不存在" << std::endl;
-
+	if (af.findId(id)) {
+		int choice;
+		std::cout << "请确认是否删除:\n1.是\n2.否" << std::endl;
+		do {
+			std::cout << "输入您的选择: " << std::endl;
+			if (std::cin >> choice && (choice == 1 || choice == 2)) break; /*输入合法性检查*/
+			std::cout << "输入有误，请重新输入" << std::endl;
+			std::cin.clear();/*清空输入缓冲区*/
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		} while (true);
+		if (choice == 1) { 
+			af.m_allAccount.erase(id);
+			std::cout << "已删除" << std::endl;
+		}
+		else {
+			std::cout << "已取消" << std::endl;
+		}
+	}
 	system("pause");
 	system("cls");
-
 }
 
 //添加账号
@@ -281,8 +295,14 @@ void Administrator::changePwd() {
 
 	if (newPwd1 != newPwd2) std::cout << "修改失败,两次输入的密码不同" << std::endl;
 	else {
-		af.modifyPwd(this->m_account.m_id, newPwd1);
-		std::cout << "修改成功" << std::endl;
+		if (newPwd1 == this->m_account.m_pwd) {
+			std::cout << "新密码不能与旧密码相同!" << std::endl;
+		}
+		else {
+			af.modifyPwd(this->m_account.m_id, newPwd1);/*文件中更改*/
+			this->m_account.m_pwd = newPwd1;/*对象中更改*/
+			std::cout << "修改成功" << std::endl;
+		}
 	}
 	system("pause");
 	system("cls");
@@ -311,7 +331,6 @@ void Administrator::showAccount() {
 		if (sf.m_allAccount.empty()) std::cout << "无学生账号记录" << std::endl;
 		else {
 			std::cout << "学号\t姓名\t密码" << std::endl;
-			std::cout << "学号\t姓名\t密码" << std::endl;
 			for (auto it = sf.m_allAccount.begin(); it != sf.m_allAccount.end(); it++) {
 				std::cout << it->second.m_id
 					<< '\t' << it->second.m_name << '\t'
@@ -325,7 +344,6 @@ void Administrator::showAccount() {
 
 		if (tf.m_allAccount.empty()) std::cout << "无老师账号记录" << std::endl;
 		else {
-			std::cout << "职工号\t姓名\t密码" << std::endl;
 			std::cout << "职工号\t姓名\t密码" << std::endl;
 			for (auto it = tf.m_allAccount.begin(); it != tf.m_allAccount.end(); it++) {
 				std::cout << it->second.m_id
