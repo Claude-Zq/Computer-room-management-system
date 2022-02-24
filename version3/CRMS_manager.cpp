@@ -1,5 +1,5 @@
 #include"CRMS_manager.h"
-#include"Administrator.h"
+
 
 
 /*展示主菜单*/
@@ -65,7 +65,8 @@ void CRMS_manager::login(int type) {
 	if (ret == 1) {
 		/*学生*/
 		if (type == 1) { 
-			std::cout << "学生用户界面" << std::endl;
+			Student stu(a);
+			stu_interface(stu);
 		}
 		/*老师*/
 		else if (type == 2) {
@@ -80,8 +81,52 @@ void CRMS_manager::login(int type) {
 }
 
 /*学生用户界面*/
-void CRMS_manager::stu_interface() {
+void CRMS_manager::stu_interface(Student& s) {
+	while (true) {
+		//学生菜单
+		s.showMenu();
+		int select = 0;/*输入用户的选择*/
+		do {
+			std::cout << "输入您的选择: " << std::endl;
+			if (std::cin >> select) break; /*输入合法性检查*/
+			std::cout << "输入有误，请重新输入" << std::endl;
+			std::cin.clear();/*清空输入缓冲区*/
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		} while (true);
 
+		if (select == 1) {
+			/*申请预约*/
+			s.applyRsv();
+		}
+		else if (select == 2) {
+			/*查看我的预约*/
+			s.showMyRsv();
+		}
+		else if (select == 3) {
+			/*查看所有预约*/
+			s.showAllRsv();
+		}
+		else if (select == 4) {
+			/*取消预约*/
+			s.cancelRsv();
+		}
+		else if (select == 5) {
+			/*修改密码*/
+			s.changePwd();
+		}
+		else if (select == 0) {
+			std::cout << "注销成功" << std::endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+		else {
+			std::cout << "无该选项，请重新输入" << std::endl;
+			system("pause");
+			system("cls");
+		}
+
+	}
 }
 
 /*老师用户界面*/

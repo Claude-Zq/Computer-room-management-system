@@ -42,6 +42,9 @@
     <ClCompile Include="Administrator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Student.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CRMS_manager.h">
@@ -72,6 +75,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="ComputerRoomFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Student.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,7 +3,7 @@
 
 Reservation::Reservation() {
 	/*处理该预约的老师的职工号 没有时默认为 "??"*/
-	std::string m_empId = "??";
+	this->m_empId = "??";
 }
 
 bool Reservation::is_conflict(const Reservation& r) {

@@ -3,7 +3,7 @@
 #include"AccountFile.h"
 #include"globalFile.h"
 #include"Administrator.h"
-
+#include"Student.h"
 
 class CRMS_manager {
 
@@ -16,7 +16,7 @@ public:
 	void login(int type);
 
 	/*学生用户界面*/
-	void stu_interface();
+	void stu_interface(Student& s);
 
 	/*老师用户界面*/
 	void tea_interface();
